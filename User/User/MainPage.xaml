@@ -1,0 +1,65 @@
+﻿<Page
+    x:Class="User.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:User"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:DesignWidth="800" d:DesignHeight="600">
+
+    <Grid FlowDirection="RightToLeft" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RequestedTheme="Default" >
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/רקעע.png" Stretch="UniformToFill"  Opacity="1"  AlignmentX="Center" AlignmentY="Center">
+                <ImageBrush.Transform>
+                    <CompositeTransform Rotation="0"/>
+                </ImageBrush.Transform>
+            </ImageBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Top"  HorizontalAlignment="Right" Margin="0,10,40,10">
+            <Button x:Name="btnConnect" Content="התחבר"  Grid.Row="0"  FontFamily="Ankol" FontSize="20" Margin="0,0,30,0"  Click="btnConnect_Click" Background="FloralWhite" BorderBrush="DeepPink"/>
+            <Button x:Name="btnNewClient" Content="הרשם"  Grid.Row="0"  FontFamily="Ankol" FontSize="20" Click="btnNewClient_Click" Background="FloralWhite" BorderBrush="DeepPink"/>
+        </StackPanel>
+        <TextBlock Text="Sweet Moments" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40"  FontFamily="Bradley Hand ITC" FontWeight="Bold" Foreground="DeepPink"/>
+        <TextBlock Text="בסיעתא דשמיא" Grid.Row="0" Grid.Column="0"  FontFamily="BN Barvaz"  SelectionChanged="TextBlock_SelectionChanged"/>
+        <StackPanel Orientation="Vertical" Padding="30">
+            <PersonPicture HorizontalAlignment="Right" Margin="5" />
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center"  >
+                <Button x:Name="btnEditDetails" Background="Transparent"  Click="btnEditDetails_Click">
+                    <SymbolIcon Symbol="Edit" />
+                </Button>
+                <TextBlock  x:Name="txtNameUser" Text="אנונימי" />
+                <Button x:Name="btnUserDetails" Background="Transparent" Click="btnUserDetails_Click" Visibility="Collapsed" >
+                    <SymbolIcon Symbol="Contact" />
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+
+        <StackPanel Grid.Column="1" Grid.Row="2"  HorizontalAlignment="Center">
+            <Button x:Name="BDetails" Content="קצת עלינו" FontSize="18" FontFamily="Ankol"  BorderBrush="Pink" Background="FloralWhite"  VerticalAlignment="Bottom"  HorizontalAlignment="Stretch"  Margin="0,40,0,0" Click="BDetails_Click" />
+
+            <Button x:Name="BKatalog" Content="לקטלוג שלנו"  FontSize="18" FontFamily="Ankol"  BorderBrush="Pink" Background="FloralWhite"  VerticalAlignment="Bottom"  HorizontalAlignment="Stretch"  Margin="0,40,0,0" Click="BKatalog_Click"/>
+
+
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right"  Grid.Row="2"  Margin="50,170,50,0" Orientation="Vertical" VerticalAlignment="Center"    >
+            <Button x:Name="btnExitDetails"  Click="btnExitDetails_Click" BorderBrush="Fuchsia" Background="Beige">
+                <SymbolIcon Symbol="Redo" />
+
+            </Button>
+            <TextBlock Text="התנתק" />
+        </StackPanel>
+
+    </Grid>
+</Page>

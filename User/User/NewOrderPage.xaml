@@ -1,0 +1,158 @@
+﻿<Page
+    x:Class="User.NewOrderPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:User"
+    xmlns:service="using:User.ClientService"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:DesignWidth="800" d:DesignHeight="600"
+   >
+
+
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/רקעע1.png" Stretch="UniformToFill" />
+        </Grid.Background>
+        <SplitView  IsPaneOpen="True" DisplayMode="Inline"  >
+            <SplitView.Pane >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Row="0">
+                        <StackPanel Orientation="Vertical" Background="FloralWhite" >
+                         <TextBlock Text="עגלת הקניות שלי🛒" FontWeight="ExtraBlack" Margin="10" HorizontalAlignment="Center" />
+                         <StackPanel Orientation="Vertical">
+                          <TextBlock Text="🍨עוגות וקינוחים-" FontWeight="ExtraBlack" Margin="10" HorizontalAlignment="Right" />
+                        <ListView x:Name="lvCakeDessert" SelectionMode="None">
+                            <ListView.Header>
+                                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+                                    <TextBlock Text="שם עוגה" Width="100" Foreground="DeepPink"/>
+                                    <TextBlock Text="מחיר" Width="100" Foreground="DeepPink"/>
+                                    <TextBlock Text="כמות" Width="100" Foreground="DeepPink"/>
+                                </StackPanel>
+                            </ListView.Header>
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="service:BuyDetails">
+                                    <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+                                        <TextBlock Text="{x:Bind CakeCode.CakeName}" Width="100"/>
+                                        <TextBlock Text="{x:Bind CakeCode.CakePrice}" Width="100"/>
+                                        <TextBlock x:Name="txtAmount" Text="{x:Bind Amount}" Width="100"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                      </StackPanel>
+                    </StackPanel>
+                    </ScrollViewer>
+                    <StackPanel  Grid.Row="1" Background="FloralWhite" >
+                        <TextBlock Text="🎂הזמנה אישית-" FontWeight="ExtraBlack" Margin="10" HorizontalAlignment="Right"/>
+                        <ListView x:Name="lvDesignCake" SelectionMode="None">
+                            <ListView.Header>
+                                <StackPanel Orientation="Horizontal" Background="FloralWhite" FlowDirection="RightToLeft">
+                                    <TextBlock Text="סוג עוגה" Width="100" Foreground="DeepPink" />
+                                    <TextBlock Text="מחיר" Width="100" Foreground="DeepPink"/>
+                                </StackPanel>
+                            </ListView.Header>
+                            <ListView.ItemTemplate >
+                                <DataTemplate x:DataType="service:Orders" >
+                                    <StackPanel Orientation="Horizontal" Background="Beige" FlowDirection="RightToLeft">
+                                        <TextBlock Text="{x:Bind CakeKind.KindName}" Width="100"/>
+                                        <TextBlock Text="{x:Bind Price}" Width="100"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                  
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" Background="FloralWhite" HorizontalAlignment="Center" FlowDirection="RightToLeft" Width="320" >
+                        <TextBlock Text="סך הכל לתשלום:" FontWeight="Bold"  />
+                        <TextBlock x:Name="txtFinalPrice"/>
+
+                        <Button x:Name="Pay" HorizontalAlignment="Center" Background="FloralWhite" Click="Pay_Click" BorderBrush="DeepPink">
+                            <Button.Content>
+                                <StackPanel Orientation="Horizontal"  >
+                                    <SymbolIcon Symbol="Accept" />
+                                    <TextBlock Text="לתשלום" FontWeight="Bold" />
+                                    <TextBlock />
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                    </StackPanel>
+
+                </Grid>
+            </SplitView.Pane >
+            <SplitView.Content >
+                <Grid FlowDirection="RightToLeft" Padding="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    
+
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+
+                        <StackPanel HorizontalAlignment="Right"  FlowDirection="RightToLeft">
+                            <TextBlock Text="פרטי לקוח" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold"/>
+                            <TextBlock Text="שם" Margin="5"/>
+                            <TextBlock Text="טלפון" Margin="5" />
+                            <TextBlock Text="מייל" Margin="5"/>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Right"  FlowDirection="RightToLeft">
+                            <TextBlock Text=" " Margin="5"/>
+                            <TextBlock x:Name="txtName" Margin="5"/>
+                            <TextBlock x:Name="txtPhone" Margin="5" />
+                            <TextBlock x:Name="txtMail" Margin="5"/>
+
+                        </StackPanel>
+                    </StackPanel>
+                    <Button x:Name="BBack" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Ankol"  BorderBrush="DeepPink" Background="FloralWhite" Click="BBack_Click">
+                        <SymbolIcon Symbol="Home" />
+
+                    </Button>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2">
+                        <Button  Content="🍩עוגות וקינוחים" Click="Button_Click" HorizontalAlignment="Right" Margin="10" Background="Beige"  BorderBrush="HotPink" Height="40"/>
+                        <Button x:Name="DesingCake" Content="🎂עוגות בהתאמה אישית " HorizontalAlignment="Right" Margin="10" Background="Beige" BorderBrush="HotPink" Click="DesingCake_Click" Height="40"/>
+                    </StackPanel>
+                     <StackPanel Grid.Row="3"  Orientation="Horizontal" HorizontalAlignment="Left"  FlowDirection="RightToLeft">
+                        <!--<ListView x:Name="lvMyBuyingDetails" >
+                            <ListView.Header>
+                                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" >
+                                    <TextBlock Text="שם עוגה" Width="100"/>
+                                    <TextBlock Text="מחיר" Width="100"/>
+                                    <TextBlock Text="כמות" Width="50"/>
+                                </StackPanel>
+                            </ListView.Header>
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="service:BuyDetails">
+                                    <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+                                        <TextBlock Text="{x:Bind CakeCode.CakeName}" Width="100"/>
+                                        <TextBlock Text="{x:Bind CakeCode.Price}" Width="100"/>
+                                        <Button x:Name="btnPlus" Content="+" Background="HotPink" BorderBrush="FloralWhite" Click="btnPlus_Click"/>
+                                        <TextBlock x:Name="txtAmount" Text="{x:Bind Amount}" Width="40" Margin="5"/>
+                                        <Button x:Name="btnMinus" Content="-" Background="HotPink" BorderBrush="FloralWhite" Click="btnMinus_Click"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>-->
+
+                    </StackPanel>
+
+                </Grid>
+
+            </SplitView.Content>
+
+
+        </SplitView>
+
+
+
+
+    </Grid>
+</Page>

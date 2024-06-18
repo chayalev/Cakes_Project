@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="User.NewCustomerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:User"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1500" d:DesignHeight="1000">
+    <Page.Background>
+        <ImageBrush ImageSource="/Assets/רקעע1.png" Stretch="UniformToFill" Opacity="1"/>
+    </Page.Background>
+    <Grid FlowDirection="RightToLeft"  >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="בסיעתא דשמיא" Grid.Row="0" Grid.Column="0"  FontSize="25" FontFamily="BN Barvaz" FocusVisualSecondaryBrush="Chocolate"/>
+        <TextBlock x:Name="header" Text="עוד כמה רגעים ונדע מי אתה...😊 " Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" FontFamily="BN Alpaca" FontSize="40"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" >
+            <TextBox x:Name="txtCode" Header="תז " FontFamily="Ankol" FontSize="18" />
+            <TextBox x:Name="txtFirstName" Header="שם פרטי" FontFamily="Ankol" FontSize="15" />
+            <TextBox x:Name="txtLastName" Header="שם משפחה" FontFamily="Ankol" FontSize="15" />
+            <TextBox x:Name="txtPhone" Header="טלפון" FontFamily="Ankol" FontSize="15" />
+            <TextBox x:Name="txtMail" Header="מייל" FontFamily="Ankol" FontSize="15" />
+            <PasswordBox x:Name="txtPassword" Header="סיסמא" FontFamily="Ankol" FontSize="15" />
+
+            <Button x:Name="btnEnter" FontSize="20" Content="אני נכנס!" VerticalAlignment="Center" BorderBrush="HotPink" HorizontalAlignment="Center" Background="Beige" Margin="20" FontFamily="Ankol" Click="btnEnter_Click"/>
+            <TextBlock x:Name="txtEror" HorizontalAlignment="Center" Foreground="Red" FontSize="30" FontWeight="Bold"/>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Center"    >
+            <Button x:Name="BMenue"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Ankol"  BorderBrush="HotPink" Background="Beige" Click="BMenue_Click">
+                <SymbolIcon Symbol="Home" />
+
+            </Button>
+            <TextBlock Text="לתפריט הראשי" />
+        </StackPanel>
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="User.KatalogPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:User"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:DesignWidth="800" d:DesignHeight="600" >
+
+
+    <Grid FlowDirection="RightToLeft" Background="LavenderBlush">
+
+    <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="בסיעתא דשמיא" Grid.Row="0"  FontSize="20" FontFamily="BN Barvaz" FocusVisualSecondaryBrush="DeepPink"/>
+        <TextBlock Text="והנה הקטלוג שלנו!" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="BN Alpaca"/>
+        <TextBlock x:Name="txtMSG" Foreground="Red" Grid.Row="2" FontWeight="Bold" FontSize="25" HorizontalAlignment="Center" />
+        <Button x:Name="NewOrder" Grid.Column="1"  Grid.Row="2" Content="טוב, עשיתם לי חשק, אני רוצה להזמין!" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Ankol"  BorderBrush="Fuchsia"  Background="Beige" Click="NewOrder_Click"  />
+
+        <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Left"    >
+            <Button x:Name="BMenue"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Ankol"  BorderBrush="DeepPink" Background="Beige" Click="BMenue_Click_1">
+                <SymbolIcon Symbol="Home" />
+
+            </Button>
+            <TextBlock Text="לתפריט הראשי" />
+        </StackPanel>
+        <Button x:Name="btnSelect" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom"  BorderBrush="DeepPink" Background="Beige" Margin="200,20,0,30" FontSize="14" Height="30" Width="50" Content="סנן"   Visibility="Visible" Click="btnSelect_Click"/>
+
+        <StackPanel x:Name="SKSelect" Grid.Row="0" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="130,20,0,10" Visibility="Collapsed"  >
+            <Button x:Name="btnVitrina" BorderBrush="DeepPink" Background="Beige" Margin="10" Height="30" Content="עוגות ויטרינה" Click="btnVitrina_Click"/>
+            <Button x:Name="btnDessert" BorderBrush="DeepPink" Background="Beige" Margin="10" Height="30" Content="קינוחים" Click="btnDessert_Click" />
+            <Button x:Name="btnHomeCake" BorderBrush="DeepPink" Background="Beige" Margin="10" Height="30" Content="עוגות הבית" Click="btnHomeCake_Click"/>
+            <Button x:Name="btnBox" BorderBrush="DeepPink" Background="Beige" Margin="10" Height="30" Content="מארזים" Click="btnBox_Click"/>
+            <Button x:Name="btnEverything" BorderBrush="DeepPink" Background="Beige" Margin="10" Height="30" Content="הכל" Click="btnEverything_Click" />
+        </StackPanel>
+         <VariableSizedWrapGrid Orientation="Vertical" x:Name="CakesList" Grid.Row="1">
+         </VariableSizedWrapGrid>
+      </Grid>
+</Page>
+

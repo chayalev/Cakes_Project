@@ -1,0 +1,24 @@
+﻿<UserControl
+    x:Class="User.UCDesignCake"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:User"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:Height="150"
+    d:Width="70" Loaded="UserControl_Loaded">
+
+    <Grid BorderBrush="DeepPink" BorderThickness="2" Background="FloralWhite" >
+    <Grid.RowDefinitions>
+        <RowDefinition Height="70"/>
+        <RowDefinition Height="30"/>
+        <RowDefinition Height="20"/>
+        <RowDefinition Height="30"/>
+    </Grid.RowDefinitions>
+        <Image x:Name="imgPic" Width="70" Stretch="Uniform" Grid.Row="0" />
+        <TextBlock  x:Name="txtDetails" Grid.Row="1" TextWrapping="Wrap"></TextBlock>
+        <TextBlock  x:Name="txtPrice" Grid.Row="2"></TextBlock>
+        <Button x:Name="btnSelect" Grid.Row="3" Content="בחר" Click="btnSelect_Click" HorizontalAlignment="Stretch" Background="LightPink" />
+    </Grid>
+</UserControl>

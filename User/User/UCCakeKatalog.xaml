@@ -1,0 +1,36 @@
+﻿<UserControl
+    x:Class="User.UCCakeKatalog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:User"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="200"
+    d:DesignWidth="180">
+
+    <Grid Background="AntiqueWhite" FlowDirection="RightToLeft" BorderBrush="DeepPink" BorderThickness="2">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Text="קוד עוגה:" FontSize="7" FontFamily="Comic Sans MS"/>
+                <TextBlock x:Name="cakeCode" FontSize="7" FontFamily="Comic Sans MS" />
+            </StackPanel>
+       
+        <Image x:Name="cakeImg" Stretch="UniformToFill"  Width="110" Height="70" ></Image>
+        <TextBlock x:Name="cakeName" FontSize="12" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="מחיר: " FontSize="11"/>
+                <TextBlock x:Name="cakePrice" FontSize="11"/>
+                <TextBlock Text="  ש'ח " FontSize="11"/>
+            </StackPanel>
+            
+            <TextBlock x:Name="cakeDetails" FontSize="8" TextWrapping="WrapWholeWords"/>
+            <StackPanel x:Name="spButtons" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom"  >
+                <Button x:Name="btnPlus" Content="+" Background="White"  BorderBrush="HotPink" Click="btnPlus_Click" />
+                <TextBox x:Name="txtAmount" BorderBrush="Pink" Background="LavenderBlush" />
+                <Button x:Name="btnMinus" Content="-" Background="White" BorderBrush="hotPink" Click="btnMinus_Click"/>
+                
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

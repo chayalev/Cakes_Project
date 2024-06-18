@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="Client" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfServer/Client/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfServer/Client/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfServer/Client/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Model" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfServer/Client/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IClient_IsPasswordClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsPasswordClient" />
+  </wsdl:message>
+  <wsdl:message name="IClient_IsPasswordClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsPasswordClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetCustomerByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByName" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetCustomerByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_AddNewCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IClient_AddNewCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_UpdateCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IClient_UpdateCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetBuyDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyDetails" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetBuyDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllBuyings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBuyings" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllBuyings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBuyingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllCakeDesserts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCakeDesserts" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllCakeDesserts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCakeDessertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetNextBuyingKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextBuyingKey" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetNextBuyingKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextBuyingKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllEventsKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEventsKind" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllEventsKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEventsKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllBaseKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBaseKind" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllBaseKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBaseKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllDesignedPhotoGallery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDesignedPhotoGallery" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllDesignedPhotoGallery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDesignedPhotoGalleryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetDesignedPhotoGalleriesByBaseKindAndEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDesignedPhotoGalleriesByBaseKindAndEvent" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetDesignedPhotoGalleriesByBaseKindAndEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDesignedPhotoGalleriesByBaseKindAndEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetOrderByCodeBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByCodeBuying" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetOrderByCodeBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByCodeBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_AddBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBuying" />
+  </wsdl:message>
+  <wsdl:message name="IClient_AddBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetStatusByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusByCode" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetStatusByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllbuyDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllbuyDetails" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllbuyDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllbuyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetBuyingsByCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyingsByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetBuyingsByCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyingsByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetBuyDetailsByBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyDetailsByBuying" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetBuyDetailsByBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyDetailsByBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetOrdersByBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByBuying" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetOrdersByBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImage" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_AddPictureInCake_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPictureInCake" />
+  </wsdl:message>
+  <wsdl:message name="IClient_AddPictureInCake_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPictureInCakeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetCakeDessertsByCategoryCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCakeDessertsByCategoryCode" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetCakeDessertsByCategoryCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCakeDessertsByCategoryCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrders" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllOrdersByBuyingCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrdersByBuyingCode" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllOrdersByBuyingCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrdersByBuyingCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetNextMessagesKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextMessagesKey" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetNextMessagesKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextMessagesKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_AddNewMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewMessages" />
+  </wsdl:message>
+  <wsdl:message name="IClient_AddNewMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMessages" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetAllMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetMessagesByCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessagesByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IClient_GetMessagesByCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessagesByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClient_ReadAllMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllMessages" />
+  </wsdl:message>
+  <wsdl:message name="IClient_ReadAllMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllMessagesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IClient">
+    <wsdl:operation name="IsPasswordClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/IsPasswordClient" message="tns:IClient_IsPasswordClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/IsPasswordClientResponse" message="tns:IClient_IsPasswordClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetCustomerByName" message="tns:IClient_GetCustomerByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetCustomerByNameResponse" message="tns:IClient_GetCustomerByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/AddNewCustomer" message="tns:IClient_AddNewCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/AddNewCustomerResponse" message="tns:IClient_AddNewCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/UpdateCustomer" message="tns:IClient_UpdateCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/UpdateCustomerResponse" message="tns:IClient_UpdateCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetBuyDetails" message="tns:IClient_GetBuyDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetBuyDetailsResponse" message="tns:IClient_GetBuyDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBuyings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetAllBuyings" message="tns:IClient_GetAllBuyings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetAllBuyingsResponse" message="tns:IClient_GetAllBuyings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCakeDesserts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetAllCakeDesserts" message="tns:IClient_GetAllCakeDesserts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetAllCakeDessertsResponse" message="tns:IClient_GetAllCakeDesserts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetAllCategories" message="tns:IClient_GetAllCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetAllCategoriesResponse" message="tns:IClient_GetAllCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextBuyingKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetNextBuyingKey" message="tns:IClient_GetNextBuyingKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetNextBuyingKeyResponse" message="tns:IClient_GetNextBuyingKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEventsKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetAllEventsKind" message="tns:IClient_GetAllEventsKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetAllEventsKindResponse" message="tns:IClient_GetAllEventsKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBaseKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetAllBaseKind" message="tns:IClient_GetAllBaseKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetAllBaseKindResponse" message="tns:IClient_GetAllBaseKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDesignedPhotoGallery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetAllDesignedPhotoGallery" message="tns:IClient_GetAllDesignedPhotoGallery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetAllDesignedPhotoGalleryResponse" message="tns:IClient_GetAllDesignedPhotoGallery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDesignedPhotoGalleriesByBaseKindAndEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetDesignedPhotoGalleriesByBaseKindAndEvent" message="tns:IClient_GetDesignedPhotoGalleriesByBaseKindAndEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetDesignedPhotoGalleriesByBaseKindAndEventResponse" message="tns:IClient_GetDesignedPhotoGalleriesByBaseKindAndEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByCodeBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetOrderByCodeBuying" message="tns:IClient_GetOrderByCodeBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetOrderByCodeBuyingResponse" message="tns:IClient_GetOrderByCodeBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/AddBuying" message="tns:IClient_AddBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/AddBuyingResponse" message="tns:IClient_AddBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetStatusByCode" message="tns:IClient_GetStatusByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetStatusByCodeResponse" message="tns:IClient_GetStatusByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllbuyDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetAllbuyDetails" message="tns:IClient_GetAllbuyDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetAllbuyDetailsResponse" message="tns:IClient_GetAllbuyDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyingsByCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetBuyingsByCustomer" message="tns:IClient_GetBuyingsByCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetBuyingsByCustomerResponse" message="tns:IClient_GetBuyingsByCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyDetailsByBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetBuyDetailsByBuying" message="tns:IClient_GetBuyDetailsByBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetBuyDetailsByBuyingResponse" message="tns:IClient_GetBuyDetailsByBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetOrdersByBuying" message="tns:IClient_GetOrdersByBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetOrdersByBuyingResponse" message="tns:IClient_GetOrdersByBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetImage" message="tns:IClient_GetImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetImageResponse" message="tns:IClient_GetImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPictureInCake">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/AddPictureInCake" message="tns:IClient_AddPictureInCake_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/AddPictureInCakeResponse" message="tns:IClient_AddPictureInCake_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCakeDessertsByCategoryCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetCakeDessertsByCategoryCode" message="tns:IClient_GetCakeDessertsByCategoryCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetCakeDessertsByCategoryCodeResponse" message="tns:IClient_GetCakeDessertsByCategoryCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetAllOrders" message="tns:IClient_GetAllOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetAllOrdersResponse" message="tns:IClient_GetAllOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrdersByBuyingCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetAllOrdersByBuyingCode" message="tns:IClient_GetAllOrdersByBuyingCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetAllOrdersByBuyingCodeResponse" message="tns:IClient_GetAllOrdersByBuyingCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextMessagesKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetNextMessagesKey" message="tns:IClient_GetNextMessagesKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetNextMessagesKeyResponse" message="tns:IClient_GetNextMessagesKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/AddNewMessages" message="tns:IClient_AddNewMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/AddNewMessagesResponse" message="tns:IClient_AddNewMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetAllMessages" message="tns:IClient_GetAllMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetAllMessagesResponse" message="tns:IClient_GetAllMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/GetMessagesByCustomer" message="tns:IClient_GetMessagesByCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/GetMessagesByCustomerResponse" message="tns:IClient_GetMessagesByCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClient/ReadAllMessages" message="tns:IClient_ReadAllMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClient/ReadAllMessagesResponse" message="tns:IClient_ReadAllMessages_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IClient" type="tns:IClient">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsPasswordClient">
+      <soap:operation soapAction="http://tempuri.org/IClient/IsPasswordClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerByName">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetCustomerByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCustomer">
+      <soap:operation soapAction="http://tempuri.org/IClient/AddNewCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <soap:operation soapAction="http://tempuri.org/IClient/UpdateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyDetails">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetBuyDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBuyings">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetAllBuyings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCakeDesserts">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetAllCakeDesserts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextBuyingKey">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetNextBuyingKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEventsKind">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetAllEventsKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBaseKind">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetAllBaseKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDesignedPhotoGallery">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetAllDesignedPhotoGallery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDesignedPhotoGalleriesByBaseKindAndEvent">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetDesignedPhotoGalleriesByBaseKindAndEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByCodeBuying">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetOrderByCodeBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBuying">
+      <soap:operation soapAction="http://tempuri.org/IClient/AddBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusByCode">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetStatusByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllbuyDetails">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetAllbuyDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyingsByCustomer">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetBuyingsByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyDetailsByBuying">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetBuyDetailsByBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByBuying">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetOrdersByBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImage">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPictureInCake">
+      <soap:operation soapAction="http://tempuri.org/IClient/AddPictureInCake" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCakeDessertsByCategoryCode">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetCakeDessertsByCategoryCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrders">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetAllOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrdersByBuyingCode">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetAllOrdersByBuyingCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextMessagesKey">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetNextMessagesKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewMessages">
+      <soap:operation soapAction="http://tempuri.org/IClient/AddNewMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetAllMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByCustomer">
+      <soap:operation soapAction="http://tempuri.org/IClient/GetMessagesByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllMessages">
+      <soap:operation soapAction="http://tempuri.org/IClient/ReadAllMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Client">
+    <wsdl:port name="BasicHttpBinding_IClient" binding="tns:BasicHttpBinding_IClient">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WcfServer/Client/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
