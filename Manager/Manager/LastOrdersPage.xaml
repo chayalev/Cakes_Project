@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="Manager.LastOrdersPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Manager"
+    xmlns:service="using:Manager.ServiceManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+
+    <Grid FlowDirection="RightToLeft" >
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/רקע המנהל.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="בסיעתא דשמיא" Grid.Row="0" Grid.Column="0" />
+        <ListView x:Name="lvLastDesserts" Grid.Row="1" >
+            <ListView.Header>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="קוד הזמנה" Width="100" FontWeight="Bold"/>
+                    <TextBlock Text="שם לקוח" Width="150" FontWeight="Bold"/>
+                    <TextBlock Text="קוד עוגה לדוג" Width="150" FontWeight="Bold"/>
+                    <TextBlock Text="סוג בסיס עוגה" Width="150" FontWeight="Bold"/>
+                    <TextBlock Text="תאריך" Width="200" FontWeight="Bold"/>
+                    <TextBlock Text="סכום לתשלום" Width="120" FontWeight="Bold"/>
+                </StackPanel>
+            </ListView.Header >
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="service:Orders">
+                    <StackPanel Orientation="Horizontal">
+                      <TextBlock Text="{x:Bind OrderCode}" Width="100" />
+                        <StackPanel Orientation="Horizontal" Width="150">
+                            <TextBlock Text="{x:Bind BuyingCode.CustomerCode.FirstName}" />
+                            <TextBlock Text="-" />
+                            <TextBlock Text="{x:Bind BuyingCode.CustomerCode.LastName}"/>
+                        </StackPanel>
+                        <TextBlock Text="{x:Bind CakeExampleCode.DesignedCakeCode}"  Width="150"/>
+                         <TextBlock Text="{x:Bind CakeKind.KindName}"  Width="150"/>
+                        <TextBlock Text="{x:Bind DateGoal}"  Width="200"/>
+                        <TextBlock Text="{x:Bind Price}"  Width="120"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+           <StackPanel Orientation="Vertical" Grid.Row="2" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text=" מספר הזמנות" FontWeight="Black" Margin="5" />
+                <TextBlock x:Name="txtCountOrder" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text=" סך הכל" FontWeight="Black" Margin="5"/>
+                <TextBlock x:Name="txtSumOrder" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

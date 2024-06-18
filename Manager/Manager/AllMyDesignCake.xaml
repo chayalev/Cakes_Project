@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="Manager.AllMyDesignCake"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Manager"
+    xmlns:service="using:Manager.ServiceManager"
+   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+
+    <Grid FlowDirection="RightToLeft" >
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/רקע המנהל.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+         <TextBlock Text="בסיעתא דשמיא" Grid.Row="0" Grid.Column="0" />
+        <ListView x:Name="lvMyOrders" Grid.Row="1" >
+            <ListView.Header>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="קוד הזמנה" Width="100" FontWeight="SemiBold"/>
+                    <TextBlock Text="שם לקוח" Width="150" FontWeight="SemiBold"/>
+                    <TextBlock Text="תאריך" Width="250" FontWeight="SemiBold"/>
+                    <TextBlock Text="סכום לתשלום" Width="120" FontWeight="SemiBold"/>
+                </StackPanel>
+            </ListView.Header >
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="service:Orders">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{x:Bind OrderCode}" Width="100" />
+                        <StackPanel Orientation="Horizontal" Width="150">
+                            <TextBlock Text="{x:Bind BuyingCode.CustomerCode.FirstName}" />
+                            <TextBlock Text="-" />
+                            <TextBlock Text="{x:Bind BuyingCode.CustomerCode.LastName}"/>
+                        </StackPanel>
+                        <TextBlock Text="{x:Bind DateGoal}"  Width="250"/>
+                        <TextBlock Text="{x:Bind Price}"  Width="120"/>
+                        <Button x:Name="btnSeeDetails" Content="פרטי הזמנה אישית👈"  Click="btnSeeDetails_Click" Background="Azure" BorderBrush="Pink"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+
+</Page>

@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="Manager.MenuPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Manager"
+    xmlns:service="using:Manager.ServiceManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:DesignWidth="800" d:DesignHeight="600">
+    
+     
+        <NavigationView FlowDirection="RightToLeft" Background="Bisque" IsSettingsVisible="False" IsBackEnabled="True" >
+            <NavigationView.MenuItems  >
+             <NavigationViewItemHeader Content="🙋‍לקוחות"  />
+             <NavigationViewItem x:Name="navCust" Content="כל הלקוחות" Icon="People" Tapped="navCust_Tapped" />
+            <NavigationViewItemHeader Content="🧁עוגות וקינוחים"  />
+            <NavigationViewItem x:Name="navCakeDessert" Content="כל העוגות" Icon="OutlineStar" Tapped="navCakeDessert_Tapped"/>
+            <NavigationViewItem x:Name="navNewCake" Content="הוספת עוגה" Icon="Add" Tapped="navNewCake_Tapped" />
+            <NavigationViewItemHeader Content="🗓הזמנות"  />
+            <NavigationViewItem x:Name="navWeitingOrders" Content="הזמנות ממתינות" Icon="Clock"  Tapped="navWeitingOrders_Tapped" />
+             <NavigationViewItem x:Name="navLastOrders" Content="הזמנות קודמות" Icon="Accept" Tapped="navLastOrders_Tapped" />
+             <NavigationViewItemSeparator />
+            <NavigationViewList Background="Beige">
+
+                </NavigationViewList>
+                <NavigationViewItem>
+
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+            <Frame x:Name="frameMain" >
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="30" VerticalAlignment="Top">
+                <TextBlock Text="Sweet Moments" FontSize="30" Margin="10" FontFamily="Segoe Print" Foreground="#FFFF7D7D"  />
+                <TextBlock Text="ברוך הבא מנהל יקר!" FontSize="25" Margin="10" FontWeight="SemiBold"/>
+            </StackPanel>
+            <Frame.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/רקע המנהל.jpg"/>
+            </Frame.Background>
+        </Frame>
+    </NavigationView>
+
+
+    
+</Page>

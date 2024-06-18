@@ -1,0 +1,99 @@
+﻿<Page
+    x:Class="Manager.CakeDessertPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Manager"
+    xmlns:service="using:Manager.ServiceManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+
+    <Grid FlowDirection="RightToLeft" >
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/רקע מנהל 2.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="בסיעתא דשמיא" Grid.Row="0" Grid.Column="0"  FontSize="20" FontFamily="BN Barvaz" />
+        <TextBlock Text="עוגות וקינוחים" Grid.Row="0"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontWeight="ExtraBlack"/>
+        <ListView x:Name="lvCakesDesserts" Grid.Row="1" >
+               <ListView.Header>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="שם העוגה" Width="120" FontWeight="Black"/>
+                    <TextBlock Text="פרטים" Width="120" FontWeight="Black"/>
+                    <TextBlock Text="מחיר" Width="120" FontWeight="Black"/>
+                </StackPanel>
+            </ListView.Header >
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="service:CakeDesserts">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{x:Bind CakeName}" Width="120" />
+                        <TextBlock Text="{x:Bind CakeCategory.CategoryName}" Width="120"/>
+                        <TextBlock Text="{x:Bind CakePrice}"  Width="120"/>
+                        <!--<Button x:Name="btnEdit" Click="btnEdit_Click" BorderBrush="Salmon" Background="AliceBlue">
+                            <SymbolIcon Symbol="TouchPointer"/>
+                        </Button>-->
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="btnNewCakes" Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="0" HorizontalAlignment="Right" Margin="60" Background="Beige" BorderBrush="Salmon" Click="btnNewCakes_Click">
+            <StackPanel Orientation="Vertical">
+                <SymbolIcon Symbol="Add"/>
+                <TextBlock Text="הוסף"/>
+            </StackPanel>
+        </Button>
+        <Grid x:Name="Category" Grid.RowSpan="4" Grid.Column="1"  Background="BlanchedAlmond">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition  Height="7*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="קטגוריות" FontWeight="Bold" Margin="10" HorizontalAlignment="Center"/>
+            <ListView x:Name="lvCategories" Grid.Row="1" >
+                <ListView.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="קוד" Width="60" FontWeight="Bold"/>
+                        <TextBlock Text="שם קטגוריה" Width="80" FontWeight="Bold"/>
+                    </StackPanel>
+                </ListView.Header >
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="service:CakesCategory">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Bind CategoryCode}" Width="50" />
+                            <TextBlock Text="{x:Bind CategoryName}" Width="80"/>
+                            <Button x:Name="btnEdit1" Click="btnEdit1_Click" BorderBrush="Salmon" Background="AliceBlue">
+                                <SymbolIcon Symbol="Edit"/>
+                            </Button>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center">
+                <TextBlock Text="שם קטגוריה" Margin="2" />
+                <TextBox x:Name="txtCategoryName" Margin="5" Width="100" />
+                <Button x:Name="btnOK" Content="אישור" Click="btnOK_Click" Margin="5" BorderBrush="Salmon" Background="AliceBlue"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <Button x:Name="btnAddCategory" Click="btnAddCategory_Click" Background="Azure" BorderBrush="Salmon">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="Add"/>
+                        <TextBlock Text="הוספת קטגוריה"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+
+</Page>

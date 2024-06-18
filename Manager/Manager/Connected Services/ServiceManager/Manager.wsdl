@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="Manager" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfServer/Manager/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfServer/Manager/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfServer/Manager/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IManager_IsMeneger_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsMeneger" />
+  </wsdl:message>
+  <wsdl:message name="IManager_IsMeneger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsMenegerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetNextCategoryKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextCategoryKey" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetNextCategoryKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextCategoryKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_AddNewCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCategory" />
+  </wsdl:message>
+  <wsdl:message name="IManager_AddNewCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetCustomerByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByName" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetCustomerByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_AddNewCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IManager_AddNewCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_UpdateCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IManager_UpdateCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetBuyDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyDetails" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetBuyDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllBuyings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBuyings" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllBuyings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBuyingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllCakeDesserts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCakeDesserts" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllCakeDesserts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCakeDessertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetNextBuyingKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextBuyingKey" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetNextBuyingKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextBuyingKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllEventsKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEventsKind" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllEventsKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEventsKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllBaseKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBaseKind" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllBaseKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBaseKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllDesignedPhotoGallery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDesignedPhotoGallery" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllDesignedPhotoGallery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDesignedPhotoGalleryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetDesignedPhotoGalleriesByBaseKindAndEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDesignedPhotoGalleriesByBaseKindAndEvent" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetDesignedPhotoGalleriesByBaseKindAndEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDesignedPhotoGalleriesByBaseKindAndEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetOrderByCodeBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByCodeBuying" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetOrderByCodeBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByCodeBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_AddBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBuying" />
+  </wsdl:message>
+  <wsdl:message name="IManager_AddBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetStatusByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusByCode" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetStatusByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllbuyDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllbuyDetails" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllbuyDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllbuyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetBuyingsByCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyingsByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetBuyingsByCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyingsByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetBuyDetailsByBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyDetailsByBuying" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetBuyDetailsByBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuyDetailsByBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetOrdersByBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByBuying" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetOrdersByBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImage" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_AddPictureInCake_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPictureInCake" />
+  </wsdl:message>
+  <wsdl:message name="IManager_AddPictureInCake_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPictureInCakeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetCakeDessertsByCategoryCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCakeDessertsByCategoryCode" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetCakeDessertsByCategoryCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCakeDessertsByCategoryCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_UpdateCakeDessert_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCakeDessert" />
+  </wsdl:message>
+  <wsdl:message name="IManager_UpdateCakeDessert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCakeDessertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_AddNewCakeDesserts_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCakeDesserts" />
+  </wsdl:message>
+  <wsdl:message name="IManager_AddNewCakeDesserts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCakeDessertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllStockImages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStockImages" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllStockImages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStockImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_UpdateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IManager_UpdateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetNextCakeKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextCakeKey" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetNextCakeKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextCakeKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetNextMessagesKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextMessagesKey" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetNextMessagesKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextMessagesKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_AddNewMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewMessages" />
+  </wsdl:message>
+  <wsdl:message name="IManager_AddNewMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMessages" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetMessagesByCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessagesByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetMessagesByCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessagesByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_ReadAllMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllMessages" />
+  </wsdl:message>
+  <wsdl:message name="IManager_ReadAllMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrders" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetOrdersByStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByStatus" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetOrdersByStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetOrdersByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByDate" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetOrdersByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_UpdatOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatOrder" />
+  </wsdl:message>
+  <wsdl:message name="IManager_UpdatOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetOrdersByCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetOrdersByCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetOrdersByWeek_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByWeek" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetOrdersByWeek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersByWeekResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllPictures_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPictures" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetAllPictures_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPicturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetPicturesByOrderCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPicturesByOrderCode" />
+  </wsdl:message>
+  <wsdl:message name="IManager_GetPicturesByOrderCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPicturesByOrderCodeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IManager">
+    <wsdl:operation name="IsMeneger">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/IsMeneger" message="tns:IManager_IsMeneger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/IsMenegerResponse" message="tns:IManager_IsMeneger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetAllCategories" message="tns:IManager_GetAllCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetAllCategoriesResponse" message="tns:IManager_GetAllCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetAllCustomers" message="tns:IManager_GetAllCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetAllCustomersResponse" message="tns:IManager_GetAllCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextCategoryKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetNextCategoryKey" message="tns:IManager_GetNextCategoryKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetNextCategoryKeyResponse" message="tns:IManager_GetNextCategoryKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/AddNewCategory" message="tns:IManager_AddNewCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/AddNewCategoryResponse" message="tns:IManager_AddNewCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetCustomerByName" message="tns:IManager_GetCustomerByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetCustomerByNameResponse" message="tns:IManager_GetCustomerByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/AddNewCustomer" message="tns:IManager_AddNewCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/AddNewCustomerResponse" message="tns:IManager_AddNewCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/UpdateCustomer" message="tns:IManager_UpdateCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/UpdateCustomerResponse" message="tns:IManager_UpdateCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetBuyDetails" message="tns:IManager_GetBuyDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetBuyDetailsResponse" message="tns:IManager_GetBuyDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBuyings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetAllBuyings" message="tns:IManager_GetAllBuyings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetAllBuyingsResponse" message="tns:IManager_GetAllBuyings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCakeDesserts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetAllCakeDesserts" message="tns:IManager_GetAllCakeDesserts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetAllCakeDessertsResponse" message="tns:IManager_GetAllCakeDesserts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextBuyingKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetNextBuyingKey" message="tns:IManager_GetNextBuyingKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetNextBuyingKeyResponse" message="tns:IManager_GetNextBuyingKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEventsKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetAllEventsKind" message="tns:IManager_GetAllEventsKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetAllEventsKindResponse" message="tns:IManager_GetAllEventsKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBaseKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetAllBaseKind" message="tns:IManager_GetAllBaseKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetAllBaseKindResponse" message="tns:IManager_GetAllBaseKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDesignedPhotoGallery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetAllDesignedPhotoGallery" message="tns:IManager_GetAllDesignedPhotoGallery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetAllDesignedPhotoGalleryResponse" message="tns:IManager_GetAllDesignedPhotoGallery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDesignedPhotoGalleriesByBaseKindAndEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetDesignedPhotoGalleriesByBaseKindAndEvent" message="tns:IManager_GetDesignedPhotoGalleriesByBaseKindAndEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetDesignedPhotoGalleriesByBaseKindAndEventResponse" message="tns:IManager_GetDesignedPhotoGalleriesByBaseKindAndEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByCodeBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetOrderByCodeBuying" message="tns:IManager_GetOrderByCodeBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetOrderByCodeBuyingResponse" message="tns:IManager_GetOrderByCodeBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/AddBuying" message="tns:IManager_AddBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/AddBuyingResponse" message="tns:IManager_AddBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetStatusByCode" message="tns:IManager_GetStatusByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetStatusByCodeResponse" message="tns:IManager_GetStatusByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllbuyDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetAllbuyDetails" message="tns:IManager_GetAllbuyDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetAllbuyDetailsResponse" message="tns:IManager_GetAllbuyDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyingsByCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetBuyingsByCustomer" message="tns:IManager_GetBuyingsByCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetBuyingsByCustomerResponse" message="tns:IManager_GetBuyingsByCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyDetailsByBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetBuyDetailsByBuying" message="tns:IManager_GetBuyDetailsByBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetBuyDetailsByBuyingResponse" message="tns:IManager_GetBuyDetailsByBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetOrdersByBuying" message="tns:IManager_GetOrdersByBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetOrdersByBuyingResponse" message="tns:IManager_GetOrdersByBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetImage" message="tns:IManager_GetImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetImageResponse" message="tns:IManager_GetImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPictureInCake">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/AddPictureInCake" message="tns:IManager_AddPictureInCake_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/AddPictureInCakeResponse" message="tns:IManager_AddPictureInCake_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCakeDessertsByCategoryCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetCakeDessertsByCategoryCode" message="tns:IManager_GetCakeDessertsByCategoryCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetCakeDessertsByCategoryCodeResponse" message="tns:IManager_GetCakeDessertsByCategoryCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCakeDessert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/UpdateCakeDessert" message="tns:IManager_UpdateCakeDessert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/UpdateCakeDessertResponse" message="tns:IManager_UpdateCakeDessert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCakeDesserts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/AddNewCakeDesserts" message="tns:IManager_AddNewCakeDesserts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/AddNewCakeDessertsResponse" message="tns:IManager_AddNewCakeDesserts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStockImages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetAllStockImages" message="tns:IManager_GetAllStockImages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetAllStockImagesResponse" message="tns:IManager_GetAllStockImages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/UpdateCategory" message="tns:IManager_UpdateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/UpdateCategoryResponse" message="tns:IManager_UpdateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextCakeKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetNextCakeKey" message="tns:IManager_GetNextCakeKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetNextCakeKeyResponse" message="tns:IManager_GetNextCakeKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextMessagesKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetNextMessagesKey" message="tns:IManager_GetNextMessagesKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetNextMessagesKeyResponse" message="tns:IManager_GetNextMessagesKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/AddNewMessages" message="tns:IManager_AddNewMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/AddNewMessagesResponse" message="tns:IManager_AddNewMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetAllMessages" message="tns:IManager_GetAllMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetAllMessagesResponse" message="tns:IManager_GetAllMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetMessagesByCustomer" message="tns:IManager_GetMessagesByCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetMessagesByCustomerResponse" message="tns:IManager_GetMessagesByCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/ReadAllMessages" message="tns:IManager_ReadAllMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/ReadAllMessagesResponse" message="tns:IManager_ReadAllMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetAllOrders" message="tns:IManager_GetAllOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetAllOrdersResponse" message="tns:IManager_GetAllOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetOrdersByStatus" message="tns:IManager_GetOrdersByStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetOrdersByStatusResponse" message="tns:IManager_GetOrdersByStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetOrdersByDate" message="tns:IManager_GetOrdersByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetOrdersByDateResponse" message="tns:IManager_GetOrdersByDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/UpdatOrder" message="tns:IManager_UpdatOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/UpdatOrderResponse" message="tns:IManager_UpdatOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetOrdersByCustomer" message="tns:IManager_GetOrdersByCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetOrdersByCustomerResponse" message="tns:IManager_GetOrdersByCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByWeek">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetOrdersByWeek" message="tns:IManager_GetOrdersByWeek_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetOrdersByWeekResponse" message="tns:IManager_GetOrdersByWeek_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPictures">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetAllPictures" message="tns:IManager_GetAllPictures_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetAllPicturesResponse" message="tns:IManager_GetAllPictures_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPicturesByOrderCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IManager/GetPicturesByOrderCode" message="tns:IManager_GetPicturesByOrderCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IManager/GetPicturesByOrderCodeResponse" message="tns:IManager_GetPicturesByOrderCode_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IManager" type="tns:IManager">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsMeneger">
+      <soap:operation soapAction="http://tempuri.org/IManager/IsMeneger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomers">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetAllCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextCategoryKey">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetNextCategoryKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCategory">
+      <soap:operation soapAction="http://tempuri.org/IManager/AddNewCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerByName">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetCustomerByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCustomer">
+      <soap:operation soapAction="http://tempuri.org/IManager/AddNewCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <soap:operation soapAction="http://tempuri.org/IManager/UpdateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyDetails">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetBuyDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBuyings">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetAllBuyings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCakeDesserts">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetAllCakeDesserts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextBuyingKey">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetNextBuyingKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEventsKind">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetAllEventsKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBaseKind">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetAllBaseKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDesignedPhotoGallery">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetAllDesignedPhotoGallery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDesignedPhotoGalleriesByBaseKindAndEvent">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetDesignedPhotoGalleriesByBaseKindAndEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByCodeBuying">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetOrderByCodeBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBuying">
+      <soap:operation soapAction="http://tempuri.org/IManager/AddBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusByCode">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetStatusByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllbuyDetails">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetAllbuyDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyingsByCustomer">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetBuyingsByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuyDetailsByBuying">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetBuyDetailsByBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByBuying">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetOrdersByBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImage">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPictureInCake">
+      <soap:operation soapAction="http://tempuri.org/IManager/AddPictureInCake" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCakeDessertsByCategoryCode">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetCakeDessertsByCategoryCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCakeDessert">
+      <soap:operation soapAction="http://tempuri.org/IManager/UpdateCakeDessert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCakeDesserts">
+      <soap:operation soapAction="http://tempuri.org/IManager/AddNewCakeDesserts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStockImages">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetAllStockImages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <soap:operation soapAction="http://tempuri.org/IManager/UpdateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextCakeKey">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetNextCakeKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextMessagesKey">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetNextMessagesKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewMessages">
+      <soap:operation soapAction="http://tempuri.org/IManager/AddNewMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetAllMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByCustomer">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetMessagesByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllMessages">
+      <soap:operation soapAction="http://tempuri.org/IManager/ReadAllMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrders">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetAllOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByStatus">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetOrdersByStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByDate">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetOrdersByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatOrder">
+      <soap:operation soapAction="http://tempuri.org/IManager/UpdatOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByCustomer">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetOrdersByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersByWeek">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetOrdersByWeek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPictures">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetAllPictures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPicturesByOrderCode">
+      <soap:operation soapAction="http://tempuri.org/IManager/GetPicturesByOrderCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Manager">
+    <wsdl:port name="BasicHttpBinding_IManager" binding="tns:BasicHttpBinding_IManager">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WcfServer/Manager/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

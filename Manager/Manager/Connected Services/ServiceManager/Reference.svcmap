@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="db6fd757-ef95-4f6e-b70e-8882de5d7f8c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WcfServer/Manager/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="48407ee3-16f2-418e-afd7-f1f832200024" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfServer/Manager/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="e7fc8355-c440-4e87-87ae-2588557593f2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfServer/Manager/?disco" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="544734e2-2713-441a-b478-9eea062ac5a3" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfServer/Manager/?xsd=xsd2" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="e2d5f2c9-59ea-4ec9-acf0-8d3121ffc9ff" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfServer/Manager/?xsd=xsd1" />
+    <MetadataFile FileName="Manager.wsdl" MetadataType="Wsdl" ID="b494a0d1-a85e-4cfe-a98e-b0ea3d80a88a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfServer/Manager/?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
