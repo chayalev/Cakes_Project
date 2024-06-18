@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Model.BaseEntity">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAEAAAAAAAA=</HashCode>
+      <FileName>BaseEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.BaseKind">
+    <Position X="7.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAACAAAAAUAAAAAAAA=</HashCode>
+      <FileName>BaseKind.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.BuyDetails">
+    <Position X="16.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAgAAAAAACAAgAACAAAIAEAAAAAAAA=</HashCode>
+      <FileName>BuyDetails.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Buying">
+    <Position X="23" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEBAgCAARAAABAAgAQAAAAAEAAAACAAAAAEgCAAAAAA=</HashCode>
+      <FileName>Buying.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.CakeDesserts">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAQABAAAAAAAAAAAAAgAACAAAAAEAAgAACAA=</HashCode>
+      <FileName>CakeDesserts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.CakesCategory">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAACAAAABEAAAAAAAA=</HashCode>
+      <FileName>CakesCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Customer">
+    <Position X="18.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAGAAAAAAAAAAAAAAAAAAAAAQCAAAQAEAAAAAAIg=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.DesignedPhotoGallery">
+    <Position X="25.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAQABAAAAAAAIAAAAACAACAAAAAEAAAAAEAA=</HashCode>
+      <FileName>DesignedPhotoGallery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.EventKind">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAACAAAAAEAAAAAAIA=</HashCode>
+      <FileName>EventKind.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Messages">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAgAAAAAIAAAAEAAAAAAACAAAAAEAACgAAAA=</HashCode>
+      <FileName>Messages.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Orders">
+    <Position X="20.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAYAAAAAoAAABAAAAAAAACAAAIAEAEAAAAEA=</HashCode>
+      <FileName>Orders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.PicturesInCake">
+    <Position X="27.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAIAAAAIAAAAAAACAAAAAEAAAAAAAA=</HashCode>
+      <FileName>PicturesInCake.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Status">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAACAAAIAEAAAAAAAA=</HashCode>
+      <FileName>Status.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.StockImages">
+    <Position X="14" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAgAAAAAAAAAAAAAAAAAADAAAAAEAAAAAAAA=</HashCode>
+      <FileName>StockImages.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
